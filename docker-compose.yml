@@ -1,0 +1,15 @@
+version: '3'
+services:
+  tightvncserver:
+    image: "martinsbalodis/docker-tightvncserver"
+    volumes:
+      - shared-xauthority:/xauthority
+      - shared-x11-unix:/tmp/.X11-unix
+  chrome:
+    image: "martinsbalodis/docker-chromium-browser"
+    volumes:
+      - shared-xauthority:/xauthority
+      - shared-x11-unix:/tmp/.X11-unix
+volumes:
+  shared-xauthority:
+  shared-x11-unix:
